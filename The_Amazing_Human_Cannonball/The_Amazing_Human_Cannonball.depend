@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1537848364 source:c:\users\thoma\kattis projects\the_amazing_human_cannonball\main.cpp
+	<iostream>
+	<cmath>
+
