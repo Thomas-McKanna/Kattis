@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1538001887 source:c:\users\thoma\kattis projects\reversed_binary_numbers\main.cpp
+	<iostream>
+	<cmath>
+
