@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1538342950 source:c:\users\thoma\kattis projects\common_anagrams\main.cpp
+	<iostream>
+	<string>
+	<algorithm>
+
+1538341547 source:c:\users\thoma\kattis projects\common_anagrams\palindromic_sequence.cpp
+	<iostream>
+	<string>
+
