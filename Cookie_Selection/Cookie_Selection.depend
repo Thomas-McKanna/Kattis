@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1539575965 source:c:\users\thoma\kattis projects\cookie_selection\main.cpp
+	<iostream>
+	<cstdlib>
+	<vector>
+	<string>
+	<fstream>
+
+1539567798 source:c:\users\thoma\kattis projects\cookie_selection\main2.cpp
+	<iostream>
+	<cstdlib>
+	<list>
+	<string>
+	<fstream>
+	<iomanip>
+

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1538594690 source:c:\users\thoma\kattis projects\racing_around_the_alphabet\main.cpp
+1538613139 source:c:\users\thoma\kattis projects\racing_around_the_alphabet\main.cpp
 	<iostream>
 	<cmath>
 	<iomanip>
