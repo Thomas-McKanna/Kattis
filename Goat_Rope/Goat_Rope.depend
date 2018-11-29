@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1543455717 source:c:\users\thoma\kattis projects\goat_rope\main.cpp
+	<iostream>
+	<utility>
+	<vector>
+	<cmath>
+	<algorithm>
+

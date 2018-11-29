@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1543458891 source:c:\users\thoma\kattis projects\eulers_number\main.cpp
+	<iostream>
+	<iomanip>
+	<vector>
+
