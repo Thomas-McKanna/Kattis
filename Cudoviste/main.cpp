@@ -38,7 +38,7 @@ int main()
     cin >> r >> c;
 
     vector<vector<char>> m(r, vector<char>(c));
-    vector<char> spots(5, 0);
+    vector<int> spots(5, 0);
 
     for (int i = 0; i < r; i++) {
         for (int j = 0; j < c; j++) {
