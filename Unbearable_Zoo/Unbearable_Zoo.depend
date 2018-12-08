@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1544312454 source:c:\users\thoma\kattis projects\unbearable_zoo\main.cpp
+	<iostream>
+	<algorithm>
+	<string>
+	<vector>
+	<unordered_map>
+
