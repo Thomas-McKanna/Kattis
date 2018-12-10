@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1544407994 source:c:\users\thoma\kattis projects\sok\main.cpp
+	<iostream>
+	<iomanip>
+	<cmath>
+
