@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1544415646 source:c:\users\thoma\kattis projects\skocimis\main.cpp
+	<iostream>
+	<cmath>
+
