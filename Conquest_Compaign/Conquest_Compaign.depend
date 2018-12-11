@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1544543464 source:c:\users\thoma\kattis projects\conquest_compaign\main.cpp
+	<iostream>
+	<set>
+	<vector>
+	<queue>
+	<utility>
+
