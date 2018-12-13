@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1544740810 source:c:\users\thoma\kattis projects\boat_parts\main.cpp
+	<iostream>
+	<set>
+
