@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1544931484 source:c:\users\thoma\kattis projects\parking_2\main.cpp
+	<iostream>
+	<set>
+
