@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1545331732 source:c:\users\thoma\kattis projects\bus\main.cpp
+	<iostream>
+	<vector>
+
