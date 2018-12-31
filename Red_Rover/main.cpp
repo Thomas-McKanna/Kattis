@@ -1,36 +1,41 @@
 #include <iostream>
-#include <unordered_map>
 
 using namespace std;
+
+string replace(string s, string r) {
+    size_t pos = 0;
+    while (pos < s.length()) {
+        pos = s.find(r);
+        if (pos != string::npos) {
+            s.replace(pos, r.length(), "M");
+            pos++;
+        } else {
+            break;
+        }
+    }
+    return s;
+}
 
 int main()
 {
     string s;
     cin >> s;
 
-    unordered_map<string, int> m;
+    size_t len = s.length();
 
-    for (size_t i = 0; i < s.length(); i++) {
-        for (size_t j = i; j < s.length(); j++) {
-            if (m.find(s.substr(i, j - i + 1)) == m.end()) {
-                m[s.substr(i, j - i + 1)] = 1;
-            } else {
-                m[s.substr(i, j - i + 1)]++;
-            }
+    string temp;
+    size_t temp_len;
+    for (size_t i = 0; i < s.length() - 1; i++) {
+        for (size_t j = i + 1; j < s.length(); j++) {
+            temp = s.substr(i, j - i + 1);
+            temp_len = temp.length();
+            temp = replace(s, temp);
+
+            len = min(temp.length() + temp_len, len);
         }
     }
 
-    int max_saved = 0;
-    for (auto it : m) {
-        cout << it.first << ": " << it.second << endl;
-        if ((int) it.first.length() * it.second - it.second - (int) it.first.length() > max_saved) {
-            max_saved = (int) it.first.length() * it.second - it.second - (int) it.first.length();
-        }
-    }
-
-    cout << s.length() << endl;
-    cout << max_saved << endl;
-    cout << s.length() - max_saved;
+    cout << len;
 
     return 0;
 }
