@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1546396665 source:c:\users\thoma\kattis projects\pervasive_heart_monitor\main.cpp
+	<iostream>
+	<string>
+	<sstream>
+	<regex>
+
