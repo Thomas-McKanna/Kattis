@@ -35,7 +35,7 @@ int main()
         }
     }
 
-    cout << len;
+    cout << len << endl;
 
     return 0;
 }

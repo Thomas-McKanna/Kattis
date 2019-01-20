@@ -45,7 +45,7 @@ int main()
             ans = "NEITHER";
     }
 
-    cout << ans;
+    cout << ans << endl;
 
     return 0;
 }
