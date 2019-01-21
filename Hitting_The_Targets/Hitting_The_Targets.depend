@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1548031835 source:c:\users\thoma\kattis projects\hitting_the_targets\main.cpp
+	<iostream>
+	<utility>
+	<cmath>
+	<vector>
+
