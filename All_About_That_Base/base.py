@@ -8,7 +8,9 @@ def symbol_to_base(symbol):
     return val
 
 def base_to_symbol(base):
-    if 1 <= base and base >= 9:
+    if base == 36:
+        return '0'
+    elif 1 <= base and base <= 9:
         return str(base)
     else:
         return chr(ord('a') + base - 10)
@@ -25,11 +27,14 @@ def to_decimal(number, base):
     position = 0
     for n in reversed(number):
         n = symbol_to_base(n)
-        if n >= base:
+        if n >= base and not (n == 1 and base == 1):
             return None
-        s += n**position
+        s += n * (base**position)
         position += 1
-    return s
+    if 1 <= s and s <= 2**32 - 1:
+        return s
+    else:
+        return None
 
 def add(first, second):
     return first + second
@@ -41,7 +46,11 @@ def mul(first, second):
     return first * second
 
 def div(first, second):
-    return first // second
+    # division must not have a remainder
+    if first % second != 0:
+        return -1
+    else:
+        return first / second
 
 op_to_func = {
     '+': add,
