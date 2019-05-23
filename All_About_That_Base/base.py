@@ -27,7 +27,9 @@ def to_decimal(number, base):
     position = 0
     for n in reversed(number):
         n = symbol_to_base(n)
-        if n >= base and not (n == 1 and base == 1):
+        if base == 1 and n != 1:
+            return None
+        elif n >= base and not (n == 1 and base == 1):
             return None
         s += n * (base**position)
         position += 1
