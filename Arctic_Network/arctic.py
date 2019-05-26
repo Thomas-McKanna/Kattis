@@ -1,9 +1,9 @@
-n = input()
+n = int(input())
 
 def distance(x1, y1, x2, y2):
     x_diff = x2 - x1
     y_diff = y2 - y1
-    return (x_diff**2 + y_diff**2)**1/2
+    return (x_diff**2 + y_diff**2)**(1/2)
         
 class Edge:
     def __init__(self, o1, o2, dis):
@@ -27,6 +27,10 @@ class SetCollection:
     def union(self, ele1, ele2):
         s1 = self.find(ele1)
         s2 = self.find(ele2)
+        if s1 is not s2:
+            self.sets.append(set.union(s1, s2))
+            self.sets.remove(s1)
+            self.sets.remove(s2)
         s1.union(s2)
 
     def remove(self, element):
@@ -36,7 +40,7 @@ class SetCollection:
     def get_elements(self):
         elements = []
         for s in self.sets:
-            elements.append(list(s))
+            elements.extend(list(s))
         return elements
 
 class Outpost:
@@ -66,12 +70,12 @@ for _ in range(n):
         d = distance(outpost.x, outpost.y, x_avg, y_avg)
         distances.append((d, outpost))
 
-    sorted(distances, key=lambda item : item[0])
+    distances = sorted(distances, key=lambda item : item[0])
 
     s_copy = s
     while s_copy > 1:
         outpost = distances.pop()
-        sets.remove(outpost)
+        sets.remove(outpost[1])
         s_copy -= 1
 
     outposts = sets.get_elements()
@@ -85,18 +89,18 @@ for _ in range(n):
                 new_edge = Edge(i, j, d)
                 potential_edges.append(new_edge)
 
-    sorted(potential_edges, reverse=True, key=lambda e : e.distance)
+    potential_edges = sorted(potential_edges, reverse=True, key=lambda e : e.distance)
 
     accepted_edge_count = 0
     last_accepted_edge_distance = 0
 
     while accepted_edge_count < p - s:
         candidate = potential_edges.pop()
-        outpost1 = candiate.post1
+        outpost1 = candidate.post1
         outpost2 = candidate.post2
         if sets.find(outpost1) is not sets.find(outpost2):
             sets.union(outpost1, outpost2)
             accepted_edge_count += 1
             last_accepted_edge_distance = candidate.distance
     
-    print(last_accepted_edge_distance)
+    print("{0:.2f}".format(last_accepted_edge_distance))
