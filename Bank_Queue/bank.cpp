@@ -20,7 +20,7 @@ int main() {
 
     for (int i = 0; i < N; i++) {
         scanf("%d %d", &c, &t);
-        people[i] = pi(-c, t);
+        people[i] = pi(-c, t); // -c so that cash is sorted in decreasing order
     }
 
     sort(people, people + N);
@@ -28,7 +28,7 @@ int main() {
     int ans = 0;
     memset(queue, -1, sizeof(queue));
     for (int i = 0; i < N; i++) {
-        c = -people[i].first;
+        c = -people[i].first; // undo the negation to cash we did earlier
         t = people[i].second;
         for (int j = t; j >= 0; j--) {
             if (queue[j] == -1) {
