@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <utility>
 #include <algorithm>
-#include <functional>
 #include <cstring>
 
 using namespace std;
