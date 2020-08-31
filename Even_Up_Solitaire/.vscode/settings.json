@@ -3,6 +3,8 @@
         "__split_buffer": "cpp",
         "string": "cpp",
         "vector": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "stack": "cpp"
     }
 }
