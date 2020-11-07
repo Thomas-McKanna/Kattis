@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <vector>
-#include <queue>
-#include <math.h>
 #include <algorithm>
 
 using namespace std;
