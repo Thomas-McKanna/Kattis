@@ -1,0 +1,9 @@
+n1 = int(input())
+n2 = int(input())
+d1 = 0
+while (n1 + d1) % 360 != n2:
+    d1 += 1
+d2 = 0
+while (n1 - d2) % 360 != n2:
+    d2 += 1
+print(d1) if d1 <= d2 else print(-d2)
