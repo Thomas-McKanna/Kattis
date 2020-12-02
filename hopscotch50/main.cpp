@@ -8,12 +8,22 @@ using namespace std;
 
 typedef pair<int, int> ii;
 
-int n, k, map[50][50];
+int n, k, map[50][50], best = 9999999;
 vector<ii> locations[2500 + 1];
 ii next_hop[50][50];
 
 int dist(ii p1, ii p2) {
     return abs(p1.first - p2.first) + abs(p1.second - p2.second);
+}
+
+void bt(int i, ii from, int total) {
+    if (i == k + 1 && total < best) best = total;
+    if (total > best) return;
+    for (int j = 0; j < locations[i].size(); j++) {
+        int added_dist = 0;
+        if (i != 1) added_dist = dist(from, locations[i][j]);
+        bt(i + 1, locations[i][j], total + added_dist);
+    }
 }
 
 int main () {
@@ -26,39 +36,9 @@ int main () {
         }
     }
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            next_hop[i][j] = ii(-1, -1);
-            if (map[i][j] == k) continue;
-            int best = 9999999, hop_dist;
-            for (int k = 0; k < locations[map[i][j] + 1].size(); k++) {
-                hop_dist = dist(ii(i, j), locations[map[i][j] + 1][k]);
-                if (hop_dist < best) {
-                    best = hop_dist;
-                    next_hop[i][j] = locations[map[i][j] + 1][k];
-                }
-            }
-        }
-    }
+    bt(1, ii(-1, -1), 0);
 
-    int best = 999999;
-
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            if (map[i][j] == 1) {
-                int curr = 1, total = 0, cx = i, cy = j;
-                while (next_hop[cx][cy].first != -1) {
-                    total += dist(ii(cx, cy), next_hop[cx][cy]);
-                    cx = next_hop[cx][cy].first;
-                    cy = next_hop[cx][cy].second;
-                    curr++;
-                }
-                if (curr == k && total < best) best = total;
-            }
-        }
-    }
-
-    if (best == 999999) best = -1;
+    if (best == 9999999) best = -1;
     printf("%d\n", best);
 
     return 0;
